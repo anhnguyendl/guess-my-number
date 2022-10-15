@@ -1,7 +1,7 @@
 'use strict';
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 20;
+let score = 10;
 let hightScore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -35,6 +35,7 @@ document.querySelector('.check').addEventListener('click', function () {
     } else {
       document.querySelector('.message').textContent = '☹️ You lost the game!';
       document.querySelector('.score').textContent = 0;
+      document.querySelector('.number').textContent = secretNumber;
     }
   }
 });
@@ -71,6 +72,7 @@ document.querySelector('.guess').addEventListener('keydown', function (e) {
       } else {
         document.querySelector('.message').textContent = '☹️ You lost the game!';
         document.querySelector('.score').textContent = 0;
+        document.querySelector('.number').textContent = secretNumber;
       }
     }
   }
@@ -79,7 +81,7 @@ document.querySelector('.guess').addEventListener('keydown', function (e) {
 var again = document.querySelector('.again');
 
 again.addEventListener('click', function () {
-  score = 20;
+  score = 10;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.score').textContent = score;
